@@ -39,7 +39,7 @@ public class CourseController implements CourseControllerApi {
 
     //分页
     @GetMapping("/coursebase/list/{page}/{size}")
-    public QueryResponseResult<C> findCourseList(
+    public QueryResponseResult findCourseList(
             @PathVariable("page") int page,
             @PathVariable("size") int size,
             CourseListRequest courseListRequest) {
