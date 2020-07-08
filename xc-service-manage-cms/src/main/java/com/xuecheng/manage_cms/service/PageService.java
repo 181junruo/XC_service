@@ -12,7 +12,6 @@ import com.xuecheng.framework.domain.cms.request.QueryPageRequest;
 import com.xuecheng.framework.domain.cms.response.CmsCode;
 import com.xuecheng.framework.domain.cms.response.CmsPageResult;
 import com.xuecheng.framework.domain.cms.response.CmsPostPageResult;
-import com.xuecheng.framework.exception.CustomException;
 import com.xuecheng.framework.exception.ExceptionCast;
 import com.xuecheng.framework.model.response.CommonCode;
 import com.xuecheng.framework.model.response.QueryResponseResult;
@@ -40,7 +39,6 @@ import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
@@ -83,7 +81,7 @@ public class PageService {
      * @param queryPageRequest  条件
      * @return
      */
-    public QueryResponseResult findList(int page,int size, QueryPageRequest queryPageRequest) {
+    public QueryResponseResult<C> findList(int page, int size, QueryPageRequest queryPageRequest) {
         if (queryPageRequest == null){
             queryPageRequest = new QueryPageRequest();
         }
@@ -123,7 +121,7 @@ public class PageService {
         QueryResult queryResult = new QueryResult();
         queryResult.setList(all.getContent());//数据列表
         queryResult.setTotal(all.getTotalElements());//数据总记录数
-        QueryResponseResult queryResponseResult = new QueryResponseResult(CommonCode.SUCCESS,queryResult);
+        QueryResponseResult<C> queryResponseResult = new QueryResponseResult<C>(CommonCode.SUCCESS,queryResult);
         return queryResponseResult;
     }
 

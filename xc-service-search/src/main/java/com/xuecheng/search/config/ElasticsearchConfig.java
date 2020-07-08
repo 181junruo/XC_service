@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author Administrator
- * @version 1.0
- **/
+
 @Configuration
 public class ElasticsearchConfig {
 
