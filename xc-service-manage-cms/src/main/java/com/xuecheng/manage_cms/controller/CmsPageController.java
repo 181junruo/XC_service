@@ -22,7 +22,7 @@ public class CmsPageController implements CmsPageControllerApi {
 
     @Override
     @GetMapping("/list/{page}/{size}")
-    public QueryResponseResult<C> findList(@PathVariable("page")int page, @PathVariable("size") int size, QueryPageRequest queryPageRequest) {
+    public QueryResponseResult findList(@PathVariable("page")int page, @PathVariable("size") int size, QueryPageRequest queryPageRequest) {
 
 
       /*  //暂时用静态数据

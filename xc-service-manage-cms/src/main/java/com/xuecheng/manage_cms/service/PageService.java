@@ -81,7 +81,7 @@ public class PageService {
      * @param queryPageRequest  条件
      * @return
      */
-    public QueryResponseResult<C> findList(int page, int size, QueryPageRequest queryPageRequest) {
+    public QueryResponseResult findList(int page, int size, QueryPageRequest queryPageRequest) {
         if (queryPageRequest == null){
             queryPageRequest = new QueryPageRequest();
         }
@@ -121,7 +121,7 @@ public class PageService {
         QueryResult queryResult = new QueryResult();
         queryResult.setList(all.getContent());//数据列表
         queryResult.setTotal(all.getTotalElements());//数据总记录数
-        QueryResponseResult<C> queryResponseResult = new QueryResponseResult<C>(CommonCode.SUCCESS,queryResult);
+        QueryResponseResult queryResponseResult = new QueryResponseResult(CommonCode.SUCCESS,queryResult);
         return queryResponseResult;
     }
 

@@ -139,7 +139,7 @@ public class CourseService {
     }
 
     //课程列表分页查询
-    public QueryResponseResult<C> findCourseList(int page, int size, CourseListRequest
+    public QueryResponseResult findCourseList(int page, int size, CourseListRequest
             courseListRequest) {
         if(courseListRequest == null){
             courseListRequest = new CourseListRequest();
@@ -162,7 +162,7 @@ public class CourseService {
         QueryResult<CourseInfo> courseIncfoQueryResult = new QueryResult<CourseInfo>();
         courseIncfoQueryResult.setList(list);
         courseIncfoQueryResult.setTotal(total);
-        return new QueryResponseResult<C>(CommonCode.SUCCESS, courseIncfoQueryResult);
+        return new QueryResponseResult(CommonCode.SUCCESS, courseIncfoQueryResult);
     }
 
 
